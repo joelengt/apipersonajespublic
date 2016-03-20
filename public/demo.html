@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Personajes</title>
+	<link rel="stylesheet" href="./css/main.css">
+	<link rel="stylesheet" href="./css/fonts.css">
+</head>
+<body>
+	<header class="Header-Main">
+
+		<div class="Header-Main__box">
+			<div class="Header-Main__logo">
+				<a href="/">
+					<figure>
+						<img src="./images/logo.png" width="43">
+					</figure>
+					<h1>SocialApp</h1>
+				</a>
+			</div>
+
+			<div class="Header-Main__user">
+				<nav>
+					<ul>
+						<li>
+							<a href="/demo" id="btn_personajes" class="menu__navs">Personajes</a>
+						</li>
+						<li>
+							<a href="#" class="menu__navs" id="btn_publicar">Publicar</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</header>
+	
+	<section class="Personajes-app">
+		  <div class="Personajes-app__box">
+		    <div class="Personajes-app__form" id="From_create">
+		      <h2>Los Mejores Personajes</h2>
+		      <p>Agrega tu Personaje Favorito</p>
+		      <form action="" id="Formulario_create" style="display: none;">
+			        <div>
+			          <label>Nombre:</label>
+			          <input type="text" id="personaje_name" placeholder="Nombre del Personaje" name="name" autocomplete="off" required="required"/>
+			        </div>
+			        <div>
+			          <label>Ocupacion del Personaje:</label>
+			          <input type="text" id="personaje_occupation" placeholder="El personaje es un..." name="occupation" autocomplete="off" required="required"/>
+			        </div>
+			        <div>
+			          <label>Serie, Pelicula o Grupo:</label>
+			          <input type="text" id="personaje_group" placeholder="El personaje es de..." name="group" autocomplete="off" required="required"/>
+			        </div>
+			        <div>
+		              <label>Edad:</label>
+			          <input type="text" id="personaje_age" placeholder="Edad del Personaje" name="age" autocomplete="off" required="required"/>
+			        </div>
+			        <div>
+			          <label>Url Imagen:</label>
+			          <input type="text" id="personaje_photo" placeholder="Pega un Enlace/URL de la imagen del Personaje" name="photo" autocomplete="off" required="required"/>
+		            </div>
+		            <button>Agregar Personaje</button>
+		      </form>
+		    </div>
+		  </div>
+	</section>
+	
+	<div class="loader">
+		<h2>Cargando Personajes...</h2>
+	</div>
+	<section class="Personajes-app">
+		  <div class="Personajes-app__read">
+		    <div id="pj_item" class="Personajes-app__read__box">
+		    </div>
+		  </div>
+	</section>
+
+
+<script type="text/javascript" src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.js"></script>
+<!-- <script type="text/javascript" src="./js/vendor/page.js"></script> -->
+<script type="text/javascript" src="./js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Anime Collections Rate</title>
+	<link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+	<header class="Header-Main">
+
+		<div class="Header-Main__box">
+			<div class="Header-Main__logo">
+				<a href="/">
+					<figure>
+						<img src="./images/logo.png" width="43">
+					</figure>
+					<h1>SocialApp</h1>
+				</a>
+			</div>
+
+			<div class="Header-Main__user">
+				<nav>
+					<ul>
+						<li>
+							<a href="/doc" class="menu__navs">Doc</a>
+						</li>
+						<li>
+							<a href="/demo" class="menu__navs">demo</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</header>
+
+	<section class="Public-Acceso">
+		<div class="Public-Acceso__box">
+			<h1>Documentación</h1>
+			<div class="Documentacion">
+
+				<h2>#Detalle</h2>
+
+				<br>
+				
+				<p>Este es un API REST publico, permite usar toda la data de personajes dentro de nuestra base de datos. Los permisos del API permiten peticiciones desde cualquier sitio web en los metodos: <strong>GET, POST, PUT, DELETE</strong>. El proposito de este contenido y el uso, es con fines educativos, toda imagen y dato enviado se almacena en nuestra base de datos. Recordar, dado a que al tener los permisos de crear, actualizar y borrar personajes, los contenidos inapropiados seran eliminados.</p>
+
+				<br>
+				<br>
+					
+				<h2>#Uso</h2>
+
+				<br>
+				
+				<p>Para usar la data, solo debes hacer un petición (desde un formulario o AJAX) en los siguientes:</p>
+				
+				<br>
+				
+				<ul>
+					<li>
+						<strong>Obtener todos los personajes</strong>
+						<p>metodo GET:</p>
+						
+						<br>
+
+						<a href="http://apipersonajes.herokuapp.com/api/personajes">http://apipersonajes.herokuapp.com/api/personajes</a>
+					</li>
+
+					<br>
+
+					<li>
+						<strong>Obtener un personaje por id</strong>
+						<p>metodo GET:</p>
+						
+						<br>
+
+						<a href="#">http://apipersonajes.herokuapp.com/api/personaje/:id</a>
+						
+						<br>
+						<br>
+
+						<p>Ejemplo: </p>
+
+						<br>
+	
+						<a href="http://apipersonajes.herokuapp.com/api/personaje/56ee4796d20081181d87e824">http://apipersonajes.herokuapp.com/api/personaje/56ee4796d20081181d87e824</a>
+					</li>
+
+					<br>
+
+					<li>
+						<strong>Crear nuevo personaje</strong>
+						<p>metodo POST:</p>
+
+						<br>
+						<p>
+							Para crear un nuevo personaje, se require llenar los parametros: name, occupation, group, age, photo (Todo tipo String, age es Number)
+						</p>
+						<p>Solo necesita, pasar parametros en la petición (como con AJAX)</p>
+						<a href="http://apipersonajes.herokuapp.com/api/personaje">http://apipersonajes.herokuapp.com/api/personaje</a>
+						
+						<br>
+						<br>
+
+						<p>También con Socket.io:</p>
+						<p>Requerir en el html jquery, socket.io</p>
+
+						<p>Colocar el js en emit, on mediante el canal: 'new personaje'</p> 
+
+						<br>
+						
+						<p>Ejemplo:</p>
+
+						<br>
+						
+						<p>
+							var socket = io() <br>
+							$('form').submit(function () {  <br>
+								socket.emit('new personaje', {  <br>
+									id: '', <br>
+									name: $('#personaje_name').val(), <br>
+									occupation: $('#personaje_occupation').val(), <br>
+									group: $('#personaje_group').val(), <br>
+									age: $('#personaje_age').val(), <br>
+									photo: $('#personaje_photo').val() <br>
+								}) <br>
+								return false <br>
+							}) <br>
+							<br>
+							socket.on('new personaje', function (content) { <br>
+								$('body').prepend(content.name) <br>
+							}) <br>
+
+						</p>
+
+						<br>
+
+						<p>
+							El id del personaje es generado automaticamente por la base de datos. El personaje creado debe llegar como estado '200 OK', donde muestra los datos del elemento creado.
+						</p>
+					</li>
+
+					<br>
+
+					<li>
+						<strong>Borrar un personaje</strong>
+						<p>metodo POST</p>
+
+						<br>
+
+						<p>*La mayoria de navegadores aun no soportan los metodos Delete desde el navegador, asi que se usa algo parecido que cumple lo mismo.</p>
+						
+						<br>
+
+						<a href="#">http://apipersonajes.herokuapp.com/api/personaje/:id?_method=delete</a>
+						
+						<br>
+						<br>
+
+						<p>Ejemplo: </p>
+							
+						<br>
+
+						<a href="#">http://apipersonajes.herokuapp.com/api/personaje/4423jkfivn43dwelk324?_method=delete</a>
+
+						<br>
+						<br>
+
+						<p>La efectividad del Proceso DELETE, te devolvera un status '200 OK'</p>
+
+					</li>
+
+					<br>
+
+					<li>
+						<strong>Actualizar un personaje</strong>
+						<p>metodo POST</p>
+
+						<br>
+
+						<p>*La mayoria de navegadores aun no soportan los metodos Put desde el navegador, asi que se usa algo parecido que cumple lo mismo.</p>
+
+						<br>
+
+						<a href="#">http://apipersonajes.herokuapp.com/api/personaje/:id?_method=put</a>
+
+						<br>
+						<br>
+	
+						<p>Ejemplo:</p>
+
+						<br>
+
+						<a href="#">http://apipersonajes.herokuapp.com/api/personaje/4423jkfivn43dwelk324?_method=put</a>
+
+						<br>
+						<br>
+
+						<p>La efectividad del Proceso PUT, te devolvera un status '200 OK'</p>
+
+					</li>
+				</ul>
+				
+				<br>
+				<br>
+
+				<h2>#Permisos</h2>
+
+				<br>
+
+				<p>
+					El uso del API, estan habilitados a todos los sitios web, para usar los metodos: <strong>GET, POST, DELETE, PUT</strong>, a los datos de la aplicación, todo con fines educativos. <br>
+					No se require ningun registro, ni cosa alguna. Para usar la data solo se necesita hacer una peticion GET o POST, ya sea desde un formulario o AJAX e incluso socket.io, tal cual en la guia de uso. <br>
+					Al usar esta aplicación, porfavor colocar los creditos en el footer 
+				</p>
+
+				<br>
+				<br>
+
+				<h2>#Desarrollo</h2>
+
+				<br>
+
+				<p>Este desarrollo, esta siendo soportado por el autor del mismo, <a href="https://twitter.com/joelengt">@joelengt</a>, cualquier consulta o apoyo en el proyecto, contactame en twitter o escribreme a <strong>joelengt@gmail.com</strong>.</p>
+			</div>
+		</div>
+	</section>
+
+	<footer class="Public-Acceso__footer">
+		<p>Creado con Amor en Nodejs 2016 | By <a href="https://twitter.com/joelengt" target="_blank">@joelengt</a></p>
+	</footer>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.js"></script>
+</body>
+</html>
