@@ -1,10 +1,9 @@
 # ApiPersonajesPublic v0.0.1
-API REST, crear tus Personajes favoritos y puntualos con amigos. Toda la data y manipulación create, edit, delete, update: 
-en [http://apipersonajes.herokuapp.com](http://apipersonajes.herokuapp.com) . creado en Nodejs, Express, MondoDB. CORS habilitados para todos los dominios CRUD
+API REST FULL Publico(CORS habilitados, cualquier cominio, peticiones CRUD). Crear tus Personajes favoritos y puntualos con amigos. Toda la documentación de la data y manipulación create, edit, delete, update: 
+en [http://apipersonajes.herokuapp.com](http://apipersonajes.herokuapp.com) , creado en Nodejs, Express, MondoDB, Socket.io + Demo en Frontend con el API usando JS, AJAX. 
 
 ##Uso del API
-Toda la infomación y demo del API: [http://apipersonajes.herokuapp.com/](http://apipersonajes.herokuapp.com)
-
+Toda la documentación y demo del API: [http://apipersonajes.herokuapp.com/](http://apipersonajes.herokuapp.com)
 
 ##Descarga/Clone
 Para usarlo primero lo bajamos de github a nuestro computador
@@ -12,6 +11,20 @@ Para usarlo primero lo bajamos de github a nuestro computador
 https://github.com/joelengt/apipersonajespublic.git
 ```
 ##Instalación
+Para Iniciar el App, se require información del archivo config.js, el cual fue eliminado por seguridad. Puedes crear uno similar:
+llamado config.js , solo incluir dentro la siguiente data:
+
+```
+var config = {
+	mongodb: {
+		local: 'mongodb://localhost/personajes_api',
+		mlab: 'url connect mongodb'
+	}
+}
+
+module.exports = config
+```
+
 Para iniciar debes tener instalado [NodeJS](https://nodejs.org/en/), [MongoDB](https://www.mongodb.org/downloads), en tu Sistema Operativo. Al tener todo, nos ubicamos en la carpeta donde guardamos la app, mediante la terminal/consola. Una vez alli ejecutar:
 ```
 npm install
