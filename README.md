@@ -3,10 +3,8 @@ API REST, crear tus Personajes favoritos y puntualos con amigos. Toda la data y 
 en [http://apipersonajes.herokuapp.com](http://apipersonajes.herokuapp.com) . creado en Nodejs, Express, MondoDB. CORS habilitados para todos los dominios CRUD
 
 ##Uso del API
-Toda la infomación y demo del API:
-```
-[http://apipersonajes.herokuapp.com/](http://apipersonajes.herokuapp.com)
-```
+Toda la infomación y demo del API: [http://apipersonajes.herokuapp.com/](http://apipersonajes.herokuapp.com)
+
 
 ##Descarga/Clone
 Para usarlo primero lo bajamos de github a nuestro computador
