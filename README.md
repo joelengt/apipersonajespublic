@@ -1,5 +1,5 @@
 # ApiPersonajesPublic v0.0.1
-API REST FULL Publico(CORS habilitados, cualquier cominio, peticiones CRUD). Crear tus Personajes favoritos y puntualos con amigos. Toda la documentación de la data y manipulación create, edit, delete, update: 
+API REST FULL Publico(CORS habilitados, cualquier dominio, peticiones CRUD). Crear tus Personajes favoritos y puntualos con amigos. Toda la documentación de la data y manipulación create, edit, delete, update: 
 en [http://apipersonajes.herokuapp.com](http://apipersonajes.herokuapp.com) , creado en Nodejs, Express, MondoDB, Socket.io + Demo en Frontend con el API usando JS, AJAX. 
 
 ##Uso del API
